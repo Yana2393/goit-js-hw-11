@@ -8,19 +8,10 @@ const searchParams = new URLSearchParams({
     safesearch: true,
 });
 
-// export function fetchPixabay(q) {
-//     searchParams.append('q', q)
-//     const url = `${BASE_URL}?${searchParams}`;
-//     return fetch(url)
-//         .then(response => {
-//             console.log(response);
-//             if (response.ok) return response.json() 
-//             throw new Error(response.status);
-//         });
-// };
-
-export async function fetchPixabay(q) {
+export async function fetchPixabay(q, page, perPage) {
     searchParams.append('q', q)
+    searchParams.append('page', page)
+    searchParams.append('per_page', perPage)
     const url = `${BASE_URL}?${searchParams}`;
     const res = await axios.get(url);
     return res.data;
