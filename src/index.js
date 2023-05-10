@@ -8,7 +8,6 @@ const gallery = document.querySelector('.gallery');
 const btnLoadMore = document.querySelector('.load-more');
 
 
-    
 searchForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const searchQueryValue = searchForm.elements.searchQuery.value.trim();
